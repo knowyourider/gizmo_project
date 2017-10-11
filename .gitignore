@@ -1,0 +1,17 @@
+# extensions
+*.pyc
+*.log
+*.jpg
+*.png
+*.gif
+
+# files
+.DS_Store
+secrets.json
+robots.txt
+.htaccess
+
+# directories
+**/.sass-cache
+**/.sass-cache/*
+static/
