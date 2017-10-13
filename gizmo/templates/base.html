@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>{% block title %}DigitalGizmo{% endblock %}</title>
+	<meta name="description" content="DigitalGizmo designs and produces websites, specializing in humanities, cultural heritage and educational websites.">
+	<meta name="keywords" content="web development, web design, history, humanities, education, cultural heritage, how things work, visual explanations" url="http://www.digitalgizmo.com/">
+	
+  <link rel="stylesheet" type="text/css" href="{% static 'css/gizmo-styles.css' %}" media="all">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Prata" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+
+<body>
+  <div id="wrapper">
+  	{% block full_page %}
+  	html will be inserted here
+  	{% endblock full_page %}
+
+    <footer>
+      <ul>
+          <li>&copy; 2017 DigitalGizmo</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/about/">About</a></li>
+          <li class="last">Contact: <a href="mailto:info@digitalgizmo.com">info@digitalgizmo.com</a></li>
+      </ul>
+    </footer>
+    
+  </div><!--/wrapper-->
+</body>
+</html>

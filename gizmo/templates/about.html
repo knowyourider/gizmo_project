@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}DigitalGizmo - Services{% endblock %}
+
+{% block full_page %}
+<header>
+
+	<div id=logotype-anim>
+	  <!-- SVG Animation -->
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1870 400" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+
+	        <g id="g-turbine">
+				<circle class="fill stroke1 miterlimit" cx="1394.5" cy="166.3" r="143" />
+				<path class="fill stroke1 miterlimit" d="M1496.6,65.2c-3.3-2.7-11.1,4.2-11.1,4.2s-30.7-16.2-55.9,9.1c21.6-13.4,54.6,1.9,54.6,1.9
+				c-1,19.8-5.5,67.2-53.4,118.4C1435.3,195.6,1498.9,141.4,1496.6,65.2z" />
+				<path class="fill stroke1 miterlimit" d="M1442.5,166.3c0-0.7,0-1.3,0-2c-1-25.6-22.1-46-48-46c-26.5,0-48,21.5-48,48c0,26.5,21.5,48,48,48
+				S1442.5,192.8,1442.5,166.3z" />
+				<path class="fill stroke1 miterlimit" d="M1394.5,23.3c-4.2,0.4-6.6,5.6-4.6,11.1c0,0-33.4,8.9-33.4,44.6c5.7-24.7,40-36.2,40-36.2
+				c13.3,14.7,43.6,51.4,46,121.5C1443.4,158.8,1450,75.5,1394.5,23.3z" />
+				<path class="fill stroke1 miterlimit" d="M1308.5,78.1c19.8,1,67.2,5.5,118.4,53.4c-3.2-4.5-57.4-68.1-133.6-65.8c-2.7,3.3-0.7,8.6,4.6,11.1
+				c0,0-18.7,28.6,6.6,53.9C1291.2,109.2,1308.5,78.1,1308.5,78.1z" />
+				<path class="fill stroke1 miterlimit" d="M1271.1,164.1c14.7-13.3,51.4-43.6,121.5-46c-5.5-0.9-88.8-7.5-141,48c0.4,4.2,10.8,4.9,10.8,4.9
+				s10.2,33.1,46,33.1C1283.6,198.3,1271.1,164.1,1271.1,164.1z" />
+				<path class="fill stroke1 miterlimit" d="M1307.1,252.4L1307.1,252.4c1-19.8,5.5-67.2,53.4-118.4c-4.5,3.2-68.1,57.4-65.8,133.6
+				c3.3,2.7,11.1-4.2,11.1-4.2s28.7,17.2,53.9-8.1C1338.1,268.8,1307.1,252.4,1307.1,252.4z" />
+				<path class="fill stroke1 miterlimit" d="M1432.7,252.8c-5.7,24.7-40,36.2-40,36.2c-13.3-14.7-43.6-51.4-46-121.5c-0.9,5.5-7.5,88.7,48,141
+				c4.2-0.4,4.9-10.8,4.9-10.8S1432.7,288.5,1432.7,252.8z" />
+				<path class="fill stroke1 miterlimit" d="M1491.6,254.9c0,0,18.2-28.7-7.1-53.9c13.4,21.6-3.9,52.6-3.9,52.6c-19.8-1-67.2-5.5-118.4-53.4
+				c3.2,4.5,57.4,68.1,133.6,65.8C1498.5,262.7,1491.6,254.9,1491.6,254.9z" />
+				<path class="fill stroke1 miterlimit" d="M1526.4,161.2c0,0-6.2-32.2-41.9-32.4c24.7,5.9,33.1,39.2,33.1,39.2c-14.8,13.2-51.7,43.2-121.8,45.1
+				c5.5,1,88.7,8.2,141.3-47C1536.8,161.8,1526.4,161.2,1526.4,161.2z" />
+				<circle class="fill stroke1 miterlimit" cx="1394.5" cy="166.3" r="27" />
+				<circle class="no-fill stroke3 miterlimit" cx="1394.5" cy="166.3" r="47" />
+				<circle class="tone-fill stroke1 miterlimit" cx="1394.5" cy="166.3" r="16" />
+
+			</g> <!-- end turbine -->
+
+			<a xlink:href="/">
+		    {% include '_gizmo-text.html' %}
+			</a> <!-- end link for text -->
+
+		</svg>
+ 
+	</div><!-- /logotype-anim -->
+
+	<nav>
+		<ul>
+   		<li><a href="/">Home</a></li>
+   		<li><a href="/projects/">Projects</a></li>
+   		<li><a href="/services/">Services</a></li>
+   		<li>About</li>
+		</ul>
+</nav>
+</header>
+
+<section id="page">
+	<h1>About Us</h1>
+	<p>We have expertise in communicating ideas and information in an engaging, visual and interactive way. We create visual designs that work for our audiences and use our technical experience to turn these designs into working web sites. We benefit from the talents of a large group of specialists, this lets us respond to each project with flexibility and a wide range of expertise.</p>
+
+	<h2 class="rule-head">Don Button</h2>
+	<div class="left-column">
+		<p>image of Don goes here</p>
+	</div>
+
+	<div class="right-column">
+		<p>Don is a programmer and technology architect who specializes in database driven web applications. After a stint in Hollywood creating special effects, and while still on the West Coast, he implemented interactive media projects for Disney Imagineering and Knowledge Adventure. Since the turn of the century, on the East Cost, with Juliet Jacobson as DigitalGizmo, Don has programmed numerous award-winning sites. All have employed web application frameworks &mdash; many built with Java and Struts, though recent sites have been built with Python and Django. All have used extensive database back-ends, and most have interactive features using, for instance, JavaScript. Don&apos;s key strength is his ability to understand the client&apos;s and designer&apos;s vision and translate that into reality using the most appropriate technologies.</p>
+	</div>
+
+	<h2 class="rule-head">Juliet Jacobson</h2>
+	<div class="left-column">
+		<p>image of Juliet goes here</p>
+	</div>
+
+	<div class="right-column">
+		<p>Juliet is website designer specializing in history and humanities websites and has created many family-friendly websites about American history. She has been an interactive media designer since 1986, after receiving her M.F.A. in graphic design from Yale. Her career has spanned the development of digital media; beginning with custom touch-screen multimedia applications for clients such as the Museum of Modern Art, the New York Historical Society and IBM; then in the late eighties, she designed prototype interfaces for futuristic hand-held computers for Apple. During the era of interactive CD ROM, Juliet was the design director for the Interactive Group at WGBH, Boston&apos;s PBS station, where she developed CD ROM software for school and public audiences based on WGBH programming such as &ldquo;Nova&rdquo; and &ldquo;The American Experience&rdquo;. Since 1995, Juliet has focussed on educational websites. Together with Don Button, as DigitalGizmo, they have created many award-winning sites that have received recognition from organizations including: Museums and the Web, Best of the Web, Journal of American History, NEH Edsitement, Best of History Web Sites, and History Matters. Juliet has been a core team member of numerous projects funded by the National Endowment for the Humanities and the Institute of Museum and Library Services. Throughout her career, regardless of the device or display medium, Juliet&apos;s goal has been to create clear, compelling and engaging experiences for users.</p>
+	</div>
+</section><!--/page-->
+
+<script src="{% static 'js/gizmo.js' %}" type="text/javascript"></script>
+
+{% endblock full_page %}
