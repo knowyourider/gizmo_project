@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
+from sitewide.views import ProjectDetailView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +25,8 @@ urlpatterns = [
     url(r'^services/$', TemplateView.as_view(template_name="services.html"), name='services'),
     url(r'^about/$', TemplateView.as_view(template_name="about.html"), name='about'),
     # url(r'^$', views.HomeTemplateView.as_view(), name='home'),
+    # url(r'^projects/(?P<slug>\S+)/$', 
+    #     TemplateView.as_view(template_name="projects/impressions.html"), name='imp'),
+    url(r'^projects/(?P<slug>\S+)/$', ProjectDetailView.as_view(), name='project_detail'),
 
 ]
