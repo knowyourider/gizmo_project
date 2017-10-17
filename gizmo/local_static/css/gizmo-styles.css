@@ -636,6 +636,7 @@ table.title-block {
 
 #slimpop-wrapper {
   background-color: #d3dbe8;
+  border: 1px solid #283C66;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
   color: #283C66;
   font: "Roboto", sans-serif;
@@ -711,5 +712,12 @@ table.title-block {
       overflow: visible;
       position: absolute;
       top: 0; } }
+
+.project {
+  max-height: 85%;
+  width: 600px; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=gizmo-styles.css.map */

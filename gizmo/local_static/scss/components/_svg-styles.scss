@@ -1,0 +1,55 @@
+// Styles for svg
+
+.svg-text {
+	fill: $blue; 
+	stroke: $blue-white;
+	stroke-miterlimit:10;
+}
+
+.stroke-5, .stroke1, .stroke2, .stroke3 {
+	stroke: $blue-white;
+}
+
+.stroke-5 {
+	stroke-width:0.5;
+}
+
+.stroke1 {
+	stroke-width: 1px;
+}
+
+.stroke2 {
+	stroke-width: 2px;
+}
+
+.stroke3 {
+	stroke-width: 3px;
+}
+
+.no-fill {
+	fill:none;	
+}
+
+.fill {
+	fill: $blue;	
+}
+
+.tone-fill {
+	fill: darken($blue, 5%);
+}
+
+.light-fill {
+	fill: $blue-white;
+}
+
+.miterlimit {
+	stroke-miterlimit: 10;
+}
+
+.cap-square {
+	stroke-linecap: square;
+}
+
+.linejoin-round {
+	stroke-linejoin: round;
+}
