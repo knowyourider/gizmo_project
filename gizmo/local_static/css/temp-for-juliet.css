@@ -1,54 +1,12 @@
 
-#slimpop-wrapper {
-  background-color: #fff4e4;
-  border: 1px solid #b3aa98;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
-  overflow: auto;
-  padding: 3px; }
-  @media print {
-    #slimpop-wrapper {
-      background-color: white;
-      border: none;
-      box-shadow: none; } }
 
-#slimpop-overlay {
-  background: url(../images/overlay.png) repeat;
-  cursor: pointer;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: 99; }
-
-
-/* JavaScript assigns this (or .hidden) to slimpop-container */
-.slimpop-basic {
-  bottom: 0;
-  display: block;
-  left: 0;
-  margin: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  /* this positions the slimpop relative to viewport, it won't scroll with the page */
-  right: 0;
-  top: 0;
-  z-index: 100; }
-  @media print {
-    .slimpop-basic {
-      overflow: visible;
-      position: absolute;
-      top: 0; } }
-
-
-.project {
+.project, .bio {
   max-height: 85%;
   width: 600px; }
 
 .hidden {
   display: none; }
 
-.unhidden {
-  display: block; }
+/*.unhidden {
+  display: block; }*/
 
