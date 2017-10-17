@@ -1,8 +1,7 @@
 $(document).ready(function(){
 
 	// set vars from selectors
-    const pauseBtn = $("#pause");
-        // resumeBtn = $("#resume");
+    const pausePlay = $("#pause_play");
 
 	const $turbine = $('#turbine'),
 		$wheel = $('#wheel'),
@@ -165,19 +164,6 @@ $(document).ready(function(){
 		// return tl;
 	// }
 
-	function stopMaster() {
-		master.kill();
-	}
-
-	function startProduct() {
-		producttl.restart();
-	}
-
-	function resetButton() {
-        pauseBtn.html("restart");   		
-	}
-
-
 	// instantiate master timeline
 	var master = new TimelineMax();
 	// nest and call functions with timelines
@@ -190,21 +176,66 @@ $(document).ready(function(){
 		.add(flopWorm(), 0) 
 		.add(raiseStamp(), 0); 		
 
+	function stopMaster() {
+		master.kill();
+	}
+
+	function startProduct() {
+		producttl.restart();
+	}
+
+	function resetButton() {
+        // pauseBtn.html("restart");   		
+        pausePlay.attr("alt","restart") 
+        pausePlay.attr("src","/static/images/play-idle.gif") 	
+	}
+
 	// handle control buttons
-    pauseBtn.click(function(){
-    	// console.log("-- pause");
-    	if (pauseBtn.html() == "pause") {
+    pausePlay.click(function(){
+    	// console.log("-- pausePlay");
+    	// console.log("-- src: " + this.src);
+    	// console.log("-- alt: " + this.alt);
+    	var altContent = this.alt;
+    	// this.src e.g.:  http://127.0.0.1:8000/static/images/play-idle.gif
+    	// var srcPath = this.src.split("/");
+    	// split path 5, e.g.: play-idle.gif
+    	// console.log("-- file: " + srcPath[5]);
+    	// var currBtn = srcPath[5];
+
+    	if (altContent == "pause") {
 	        master.pause();
-	        pauseBtn.html("resume");   		
-    	} else if (pauseBtn.html() == "restart") {
+	        // this.src("/static/images/play-idle.gif"); 
+	        $(this).attr("src","/static/images/play-idle.gif") 
+	        $(this).attr("alt","resume") 
+    	} else if (altContent == "restart") {
 	        // setMaster();
 	        master.restart();
-	        pauseBtn.html("pause");   		
+	        // pausePlay.html("pause");   		
+	        $(this).attr("src","/static/images/pause-idle.gif");
+	        $(this).attr("alt","pause");
     	} else { // it already says resume
 	        master.resume();
-	        pauseBtn.html("pause");   		
+	        // pausePlay.html("pause");   	
+	        $(this).attr("src","/static/images/pause-idle.gif");
+	        $(this).attr("alt","pause");
     	}
     });
+
+	pausePlay.hover(
+		function(event){ 
+			if (this.alt == "pause") {
+		        $(this).attr("src","/static/images/pause-hover.gif") 				
+			} else { // must be resume or restar
+		        $(this).attr("src","/static/images/play-hover.gif") 				
+			}
+		}, function(event){
+			if (this.alt == "pause") {
+		        $(this).attr("src","/static/images/pause-idle.gif") 				
+			} else { // must be resume or restar
+		        $(this).attr("src","/static/images/play-idle.gif") 				
+			}
+		}
+	);
 
 	$turbine.hover(
 		function(event){ 

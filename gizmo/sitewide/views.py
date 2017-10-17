@@ -17,7 +17,7 @@ class ProjectDetailView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ProjectDetailView, self).get_context_data(**kwargs)
         # get the short name
-        print(" -- **kwargs: " + kwargs['slug'])
+        # print(" -- **kwargs: " + kwargs['slug'])
         # page = "impressions"
         page = kwargs['slug']
         # add variables to context

@@ -28,5 +28,6 @@ urlpatterns = [
     # url(r'^projects/(?P<slug>\S+)/$', 
     #     TemplateView.as_view(template_name="projects/impressions.html"), name='imp'),
     url(r'^projects/(?P<slug>\S+)/$', ProjectDetailView.as_view(), name='project_detail'),
+    url(r'^about/(?P<slug>\S+)/$', ProjectDetailView.as_view(), name='about_detail'),
 
 ]

@@ -62,8 +62,8 @@ $(document).ready(function(){
     var chosen_href = $(event.target).closest('a').attr('href');
 
     // var href_split = chosen_href.split('/');    
-    // // href_split[2] = project, bio
-    // var slimpopSizeClass = href_split[2];
+    // // href_split[1] = project, about
+    // var slimpopSizeClass = href_split[1];
 
 	// slimPop(chosen_href, slimpopSizeClass);  
 	slimPop(chosen_href, "project");  
@@ -122,13 +122,8 @@ function slimPop(theURL, sizeClass) {
 /* simple hide called by Close link in box, and by hideOverlay, below.
 */
 function hideBox() {
-  // test for existence of audioPlayer element 
-  if ($('audio')) {
-    $('audio').trigger("pause");
-  }
-  if ($('video')) {
-    $('video').trigger("pause");
-  }
+  // test for existence of audioPlayer element - see Impressions
+  // set var for div
   var contentDiv = $('#slimpop-container');
   // empty content div so it won't briefly show old content on new pop
   contentDiv.html = " ";  
