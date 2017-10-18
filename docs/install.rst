@@ -39,5 +39,41 @@ In Terminal in project
 - create docs dir (and save these notes there!)
 - set up setting per two scoops
 
-Set up GIT
-----------
+
+Install on eApps
+-----------------
+
+Get Git
+---------
+
+Logged in as gizmo_user
+::
+	cd /var/www/gizmo_user/data/www
+	git clone https://github.com/knowyourider/gizmo_project.git digitalgizmo.com.vm-host.net
+
+Setup virtual environment and install Django
+---------------------------------------------
+
+Logged in as root
+::
+	mkvirtualenv -a  /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo --python=/usr/local/bin/python3.4 gizmo
+
+
+Config Apache
+--------------
+
+Additions to apache
+in /etc/httpd/conf/http...
+::
+	# Don inserting here
+	Alias /static/ /var/www/gizmo_user/data/www/imp_static/
+	WSGIDaemonProcess staging python-path=/var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo:/var/www/gizmo_user/data/.envs/gizmo/lib/python3.4/site-packages
+	WSGIProcessGroup production
+	WSGIScriptAlias / /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo/config/wsgi.py
+	# end insertion
+
+
+	</VirtualHost>
+	<Directory /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo>
+		Options +Includes -ExecCGI
+	</Directory>
