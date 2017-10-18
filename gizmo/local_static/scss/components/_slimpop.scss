@@ -58,11 +58,13 @@
 }
 
 .highlight {
-  background-color: darken($slim-background-color, 5%);
+//  border: 1px solid $base-border-color;
+//  background-color: darken($slim-background-color, 5%);
   margin-bottom: $base-spacing * 1.25;
   padding: $small-spacing;
 
-  h2 {
+  h2 a {
+    color: $blue;
     font-size: $base-font-size * 1.5;
     margin: $tiny-spacing 0;
   }

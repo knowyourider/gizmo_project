@@ -366,10 +366,11 @@ hr {
   border-top: 0;
   margin: 1.6em 0; }
 
-img,
-picture {
+img, picture {
   margin: 0;
-  max-width: 100%; }
+  max-width: 100%;
+  padding: 2px;
+  border: 1px solid #bfc0d0; }
 
 header h1 {
   font-size: 10em;
@@ -535,26 +536,6 @@ footer a, header nav a {
   .projects-grid-item h3 {
     font-size: 2em;
     margin-bottom: 0.4em; } }
-.projects-grid-item img {
-  padding: 2px;
-  border: 1px solid #bfc0d0; }
-
-.bio {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%; }
-  .bio:last-child {
-    margin-right: 0; }
-  .bio:nth-child(2n) {
-    margin-right: 0; }
-  .bio:nth-child(2n+1) {
-    clear: left; }
-  .bio img {
-    float: left;
-    margin-right: 1.6em;
-    width: 30%;
-    height: auto; }
 
 .home-anim, .logotype-anim {
   position: relative; }
@@ -694,10 +675,10 @@ table.title-block {
   margin: -2em null 2em null; }
 
 .highlight {
-  background-color: #c2cddf;
   margin-bottom: 2em;
   padding: 0.8em; }
-  .highlight h2 {
+  .highlight h2 a {
+    color: #283C66;
     font-size: 1.35em;
     margin: 0.4em 0; }
 
