@@ -99,9 +99,12 @@ footer ul li {
 			margin-bottom: $tiny-spacing;
 		}
 	}
+}
 
-  // img {
-  // 	padding: 2px;
-  // 	border: $base-border;
-  // }
+img.pause-button {
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

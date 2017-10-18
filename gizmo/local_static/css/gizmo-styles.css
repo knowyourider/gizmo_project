@@ -537,6 +537,11 @@ footer a, header nav a {
     font-size: 2em;
     margin-bottom: 0.4em; } }
 
+img.pause-button {
+  border: none; }
+  img.pause-button:hover {
+    cursor: pointer; }
+
 .home-anim, .logotype-anim {
   position: relative; }
 
