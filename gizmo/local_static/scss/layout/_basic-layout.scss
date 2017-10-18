@@ -1,0 +1,107 @@
+// Basic Layout
+body {
+	background: #283C66 url("../images/gizmo-bkgnd.jpg") repeat;
+}
+
+#wrapper {
+	@include outer-container;
+	overflow: auto;
+}
+
+header {
+	@include outer-container;
+}
+
+#page {
+	@include outer-container;
+	padding: $base-spacing;
+}
+
+footer, header nav {
+	@include outer-container;
+	border-top: $base-border;
+	padding: $small-font-size $base-spacing;
+}
+
+footer, header nav {
+	ul li {
+		display: inline;
+		padding-right: $base-spacing;
+		border-right: $base-border;
+	}
+	
+	ul li.last {
+		border-right: none;
+	}
+
+	a {
+		margin-right: $small-spacing;
+	}
+}
+
+footer ul li {
+	// if screen is less than 600px
+  @include media(max-width $medium-screen - 1px) {
+		border-right: none;
+		display: block;
+		padding: $tiny-spacing 0;
+	}
+}
+
+.left-column {
+  @include span-columns(12);
+	margin-bottom: $base-spacing;
+
+  @include media($medium-screen) {
+  	@include span-columns(3);
+  }
+}
+
+.right-column {
+	@include span-columns(12);
+	margin-bottom: $large-spacing;
+
+  @include media($medium-screen) {
+    @include span-columns(9);
+		@include omega;
+	}
+}
+
+.projects-grid {
+	margin: $large-spacing 0;
+}
+
+.projects-grid-item {
+	// if screen is less than 600px, layout is 2 columns
+  @include media(max-width $medium-screen - 1px) {
+  	margin-bottom: $base-spacing;
+  	@include span-columns(6 of 12);  
+  	@include omega(2n);
+	}
+
+	// if screen is greater than or equal to 600px, layout is 3 columns
+  @include media($medium-screen) {
+  	margin-bottom: $large-spacing;
+    @include span-columns(4 12);
+    @include omega(3n);
+  }
+	
+	h3 {
+		// if screen is less than 900px, text is smaller
+	  @include media(max-width $large-screen) {
+	 		font-size: $med-large-font-size * .75;
+			margin-bottom: $small-spacing;
+		}
+
+		// if screen is greater than or equal to 600px, text is larger
+		@include media($large-screen) {
+ 			font-size: $med-large-font-size;
+			margin-bottom: $tiny-spacing;
+		}
+	}
+
+  img {
+  	padding: 2px;
+  	border: $base-border;
+  }
+}

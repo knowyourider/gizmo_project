@@ -2,6 +2,7 @@ body {
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
+  font-weight: 300;
   line-height: $base-line-height;
 }
 
@@ -13,8 +14,11 @@ h5,
 h6 {
   font-family: $heading-font-family;
   font-size: $base-font-size;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+  margin: 0;
 }
 
 p {
@@ -46,3 +50,39 @@ picture {
   margin: 0;
   max-width: 100%;
 }
+
+header h1 {
+  font-size: $super-large-font-size;
+  font-style: normal;
+  font-weight: 400;
+  color: $heading-font-color;
+  margin-bottom: 0;
+}
+
+#page h1 {
+  color: $heading-font-color;
+  font-size: $large-font-size;
+}
+
+#page h2 {
+  font-size: $med-large-font-size;
+}
+
+#page h2, #page h3, #page h4 {
+  color: $subhead-font-color;
+}
+
+h2.rule-head {
+  @include outer-container;
+  border-top: $base-border;
+  clear: both;
+  margin-top: $base-spacing;
+  padding: $tiny-spacing 0 $small-spacing 0;
+}
+
+ul.services-list {
+  list-style-type: disc;
+  margin-left: $small-spacing;
+}
+
+
