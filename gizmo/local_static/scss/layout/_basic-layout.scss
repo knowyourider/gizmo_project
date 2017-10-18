@@ -105,3 +105,15 @@ footer ul li {
   	border: $base-border;
   }
 }
+
+.bio {
+  @include span-columns(6 12);
+  @include omega(2n);
+
+  img {
+  	float: left;
+  	margin-right: $base-spacing;
+  	width: 30%;
+  	height: auto;
+  }
+}

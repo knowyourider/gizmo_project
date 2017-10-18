@@ -539,6 +539,23 @@ footer a, header nav a {
   padding: 2px;
   border: 1px solid #bfc0d0; }
 
+.bio {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .bio:last-child {
+    margin-right: 0; }
+  .bio:nth-child(2n) {
+    margin-right: 0; }
+  .bio:nth-child(2n+1) {
+    clear: left; }
+  .bio img {
+    float: left;
+    margin-right: 1.6em;
+    width: 30%;
+    height: auto; }
+
 .home-anim, .logotype-anim {
   position: relative; }
 
