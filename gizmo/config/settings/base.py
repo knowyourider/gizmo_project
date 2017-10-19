@@ -138,7 +138,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Static files (CSS, JavaScript, Images)
-STATIC_ROOT = BASE_DIR.ancestor(2).child("imp_static")
+STATIC_ROOT = BASE_DIR.ancestor(2).child("gizmo_static")
 
 STATIC_URL = '/static/'
 
