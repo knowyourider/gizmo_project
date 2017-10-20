@@ -41,7 +41,7 @@ In Terminal in project
 
 
 Install on eApps
------------------
+================
 
 Get Git
 ---------
@@ -65,13 +65,19 @@ Config Apache
 Additions to apache
 in /etc/httpd/conf/http...
 ::
-	# Don inserting here
-	Alias /static/ /var/www/gizmo_user/data/www/imp_static/
-	WSGIDaemonProcess staging python-path=/var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo:/var/www/gizmo_user/data/.envs/gizmo/lib/python3.4/site-packages
-	WSGIProcessGroup production
-	WSGIScriptAlias / /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo/config/wsgi.py
-	# end insertion
+	<VirtualHost 68.169.50.201:80 >
+		ServerName digitalgizmo.com.vm-host.net
+		CustomLog /var/www/httpd-logs/digitalgizmo.com.vm-host.net.access.log combined
+		DocumentRoot /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net
+		ErrorLog /var/www/httpd-logs/digitalgizmo.com.vm-host.net.error.log
+		ServerAdmin donpublic@digitalgizmo.com
+		ServerAlias www.digitalgizmo.com.vm-host.net
+		SuexecUserGroup gizmo_user gizmo_user
 
+		Alias /static/ /var/www/gizmo_user/data/www/gizmo_static/
+		WSGIDaemonProcess production python-path=/var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo:/var/www/gizmo_user/data/.envs/gizmo/lib/python3.4/site-packages
+		WSGIProcessGroup production
+		WSGIScriptAlias / /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo/config/wsgi.py
 
 	</VirtualHost>
 	<Directory /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo>

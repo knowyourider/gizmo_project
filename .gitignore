@@ -15,3 +15,5 @@ robots.txt
 **/.sass-cache
 **/.sass-cache/*
 static/
+gizmo/local_static/images
+gizmo/local_static/js/images
