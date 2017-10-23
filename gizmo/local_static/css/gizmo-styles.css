@@ -345,7 +345,6 @@ h6 {
   font-size: 0.9em;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.05em;
   line-height: 1.2;
   margin: 0; }
 
@@ -549,8 +548,7 @@ img.pause-button {
   .home-nav {
     position: absolute;
     left: 45%;
-    top: 10%;
-    border: 4px solid green; } }
+    top: 10%; } }
 @media screen and (min-width: 600px) {
   .home-nav {
     position: absolute;
@@ -565,7 +563,8 @@ img.pause-button {
       font-size: 3em; } }
   @media screen and (min-width: 600px) {
     .home-nav li a {
-      font-size: 4em; } }
+      font-size: 4em;
+      letter-spacing: 0.05em; } }
 
 table.title-block {
   border: 3px solid #98A1BC; }
@@ -638,7 +637,7 @@ table.title-block {
   stroke-linejoin: round; }
 
 #slimpop-wrapper {
-  background-color: #d3dbe8;
+  background-color: #F0F0E1;
   border: 1px solid #283C66;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
   color: #283C66;

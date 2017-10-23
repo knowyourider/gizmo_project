@@ -3,16 +3,12 @@
 	position: relative;
 }
 
-.svg-class {
-}
-
 .home-nav {
 	// if screen is less than 600px
   @include media(max-width $medium-screen - 1px) {
 		position: absolute;
 		left: 45%;
 		top: 10%;
-		border: 4px solid green;
 	}
 
 	// if screen is greater than or equal to 600px
@@ -27,12 +23,15 @@
 		font-family: $heading-font-family; 
 		line-height: 2em;
 
+		// if screen is less than 600px
   	@include media(max-width $medium-screen - 1px) {
   		font-size: $large-font-size * .75;
   	}
 
+		// if screen is greater than or equal to 600px
   	@include media($medium-screen) {
   		font-size: $large-font-size;
+			letter-spacing: 0.05em;
   	}
 	}
 }
