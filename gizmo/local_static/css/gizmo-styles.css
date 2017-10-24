@@ -679,8 +679,7 @@ table.title-block {
   margin: -2em null 2em null; }
 
 .highlight {
-  margin-bottom: 2em;
-  padding: 0.8em; }
+  margin-bottom: 2em; }
   .highlight h2 a {
     color: #283C66;
     font-size: 1.35em;
@@ -716,8 +715,9 @@ table.title-block {
       top: 0; } }
 
 .project {
+  /* this should resize for mobile unless the full page feature takes care of it  */
   max-height: 85%;
-  width: 600px; }
+  width: 80%; }
 
 .hidden {
   display: none; }

@@ -21,11 +21,6 @@
   overflow: auto;
   padding: $base-spacing $small-spacing $base-spacing $small-spacing;
 
-  // large displays, greater than or equal to 880em - 8 cols
- // @include media($large-screen) {
- //   padding: $base-spacing $large-spacing $large-spacing $large-spacing;
- // }
-
   @media print {
     border: none;
   }
@@ -58,10 +53,7 @@
 }
 
 .highlight {
-//  border: 1px solid $base-border-color;
-//  background-color: darken($slim-background-color, 5%);
   margin-bottom: $base-spacing * 1.25;
-  padding: $small-spacing;
 
   h2 a {
     color: $blue;
@@ -101,9 +93,11 @@
   }
 }
 
-.project {
+.project {/* this should resize for mobile unless the full page feature takes care of it  */
   max-height: 85%;
-  width: 600px; }
+  width: 80%;
+}
 
 .hidden {
-  display: none; }
+  display: none; 
+}
