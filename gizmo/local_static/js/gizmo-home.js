@@ -65,7 +65,7 @@ $(document).ready(function(){
 	    .set($lever, {transformOrigin: '162 46'})
 	    .set($ratchet, {rotation: ratchetExtended, transformOrigin: '8 8'})
 	    .set($stamper, {y: stampTop})
-	    .set($products, {x: 760, y: 1515, autoAlpha: 0}); // , autoAlpha: 0
+	    .set($products, {autoAlpha: 0}); // , x: 760, y: 1515, 
 	  
 	  // return timeline
 	  return tl;

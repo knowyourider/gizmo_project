@@ -3,7 +3,8 @@ $(document).ready(function(){
 	// console.log(" -- got doc ready");
 
 	const gWheel = $('#g-wheel'),
-		gTurbine = $('#g-turbine'),
+    gTurbine = $('#g-turbine'),
+		gTurbineHub = $('#g-turbine_hub'),
 		gCog = $('#g-cogged_gear'),
 		gRatchet = $('#ratchet-gear');
 		// replayButton = $('#replay');
@@ -25,7 +26,7 @@ $(document).ready(function(){
 	gCog.hover(
 		function(event){ 
 			// console.log(" -- over cog");
-			ctl.timeScale(8);
+			ctl.timeScale(6);
 		}, function(event){
 			ctl.timeScale(1);
 		}
@@ -37,7 +38,7 @@ $(document).ready(function(){
 			// console.log(" -- over ratchet");
 			ctl.timeScale(16);
 		}, function(event){
-			ctl.timeScale(8);
+			ctl.timeScale(6);
 		}
 	);
 
@@ -45,11 +46,15 @@ $(document).ready(function(){
 	// TweenLite.to(gTurbine, 5, {rotation: -270, ease: Power3.easeOut });
 	const ttl = new TimelineMax(0);
 	ttl.to(gTurbine, 5, {rotation: -270, ease: Power4.easeOut });
-	gTurbine.hover(
+
+  // gTurbine.hover(
+	gTurbineHub.hover(
 		function(event){ 
-			TweenLite.to(gTurbine, 3, {rotation: '+=270', ease: Power3.easeOut });
-		}, function(event){
-			// ttl.pause();
+      // TweenLite.to(gTurbine, 3, {rotation: '+=270', ease: Power3.easeOut });
+      TweenMax.to(gTurbine, 2, {rotation: '+=360', repeat:-1, ease: Power0.easeNone });
+    }, function(event){
+      // ttl.pause();
+			TweenLite.to(gTurbine, 2, {rotation: '+=180', ease: Power3.easeOut });
 		}
 	);
 
