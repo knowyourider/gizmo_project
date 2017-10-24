@@ -4,8 +4,8 @@ $(document).ready(function(){
 
 	const gWheel = $('#g-wheel'),
 		gTurbine = $('#g-turbine'),
-		gCog = $('#g-cogged_gear');
-		// gRatchet = $('#g-ratchet-gear');
+		gCog = $('#g-cogged_gear'),
+		gRatchet = $('#ratchet-gear');
 		// replayButton = $('#replay');
 
 	TweenLite.set(gWheel, {transformOrigin: 'center center'}); 
@@ -25,20 +25,21 @@ $(document).ready(function(){
 	gCog.hover(
 		function(event){ 
 			// console.log(" -- over cog");
-			ctl.timeScale(10);
+			ctl.timeScale(8);
 		}, function(event){
 			ctl.timeScale(1);
 		}
 	);
-	// // faster for inner ratchet gear
-	// gRatchet.hover(
-	// 	function(event){ 
-	// 		console.log(" -- over ratchet");
-	// 		ctl.timeScale(30);
-	// 	}, function(event){
-	// 		ctl.timeScale(10);
-	// 	}
-	// );
+
+	// faster for inner ratchet gear
+	gRatchet.hover(
+		function(event){ 
+			// console.log(" -- over ratchet");
+			ctl.timeScale(16);
+		}, function(event){
+			ctl.timeScale(8);
+		}
+	);
 
 	TweenLite.set(gTurbine, {transformOrigin: 'center center'}); 
 	// TweenLite.to(gTurbine, 5, {rotation: -270, ease: Power3.easeOut });

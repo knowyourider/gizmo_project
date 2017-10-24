@@ -4,6 +4,7 @@ $(document).ready(function(){
     const pausePlay = $("#pause_play");
 
 	const $turbine = $('#turbine'),
+		$turbineHub = $('#turbine_hub'),
 		$wheel = $('#wheel'),
 		$pinions	= $(".pinion"),
 		$worms	= $(".worm"),
@@ -236,7 +237,7 @@ $(document).ready(function(){
 		}
 	);
 
-	$turbine.hover(
+	$turbineHub.hover(
 		function(event){ 
 			master.timeScale(2);
 		}, function(event){
