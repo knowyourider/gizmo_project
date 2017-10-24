@@ -10,10 +10,8 @@ $(document).ready(function(){
 		$coggedGear = $('#cogged_gear'),
 		$lever = $('#lever'),
 		$ratchet = $('#ratchet'),
-		$stamper = $('#stamper');
-		// var $products = [$('#product_1'), $('#product_2'), $('#product_3'), $('#product_4')] ,
-		// $products = $('.product'),
-		$product_1 = $('#product_1');
+		$stamper = $('#stamper'),
+		$products = $('.product');
 
 	// set ratios
 	var turbineCycle = 3; // 3
@@ -66,7 +64,7 @@ $(document).ready(function(){
 	    .set($lever, {transformOrigin: '162 46'})
 	    .set($ratchet, {rotation: ratchetExtended, transformOrigin: '8 8'})
 	    .set($stamper, {y: stampTop})
-	    .set($product_1, {autoAlpha: 0});
+	    .set($products, {x: 760, y: 1515, autoAlpha: 0}); // , autoAlpha: 0
 	  
 	  // return timeline
 	  return tl;
@@ -144,25 +142,25 @@ $(document).ready(function(){
 			// .to($stamper, leverDownTime, {delay:leverUpTime, y: '-=25px', ease:Power0.easeNone })
 			// .to($stamper, leverDownTime, {delay:leverUpTime, y: '-=25px', ease:Power0.easeNone })
 			.to($stamper, leverUpTime, {y: stampTop, ease:Power0.easeNone })
-			.set( $product_1, {autoAlpha: 1} ) 
+			// .set( $product_1, {autoAlpha: 1} ) 
+			// .set( $products[0], {autoAlpha: 1} ) 
 			// call separate product timeline
 			.call(startProduct)
-			// kill master timeline
 			.call(stopMaster);
-
+			// kill master timeline
 
 		return tl;
 	}
 
 	// product conveyor belt
 	// function moveProduct() {
-	const producttl = new TimelineMax({paused:true});
-
-	producttl.to($product_1, 7, {x: 2000, ease:Linear.easeNone} )
-		.call(resetButton);
-
-		// return tl;
-	// }
+	function startProduct() {
+		// pick random number
+		var prodNum = Math.floor((Math.random() * 6)); //  + 1
+		console.log(" -- prodNum: " + prodNum);
+		TweenLite.set($products[prodNum], {autoAlpha: 1});
+		TweenMax.to($products[prodNum], 7, {x: "2000px", ease:Linear.easeNone} );
+	}
 
 	// instantiate master timeline
 	var master = new TimelineMax();
@@ -177,11 +175,8 @@ $(document).ready(function(){
 		.add(raiseStamp(), 0); 		
 
 	function stopMaster() {
+		resetButton();
 		master.kill();
-	}
-
-	function startProduct() {
-		producttl.restart();
 	}
 
 	function resetButton() {
@@ -190,17 +185,19 @@ $(document).ready(function(){
         pausePlay.attr("src","/static/images/play-idle.gif") 	
 	}
 
+	function restartMaster() {
+		// reset product positions
+		// doesn't seem to be taken care of by restart
+		TweenLite.set($products, {x: 760, y: 1515, autoAlpha: 0}); // , autoAlpha: 0
+		master.restart();
+	}
+
 	// handle control buttons
     pausePlay.click(function(){
     	// console.log("-- pausePlay");
     	// console.log("-- src: " + this.src);
     	// console.log("-- alt: " + this.alt);
     	var altContent = this.alt;
-    	// this.src e.g.:  http://127.0.0.1:8000/static/images/play-idle.gif
-    	// var srcPath = this.src.split("/");
-    	// split path 5, e.g.: play-idle.gif
-    	// console.log("-- file: " + srcPath[5]);
-    	// var currBtn = srcPath[5];
 
     	if (altContent == "pause") {
 	        master.pause();
@@ -209,7 +206,9 @@ $(document).ready(function(){
 	        $(this).attr("alt","resume") 
     	} else if (altContent == "restart") {
 	        // setMaster();
-	        master.restart();
+	        // master.restart();
+	        restartMaster();
+
 	        // pausePlay.html("pause");   		
 	        $(this).attr("src","/static/images/pause-idle.gif");
 	        $(this).attr("alt","pause");
