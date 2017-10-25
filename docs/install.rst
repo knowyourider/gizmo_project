@@ -50,6 +50,7 @@ Logged in as gizmo_user
 ::
 	cd /var/www/gizmo_user/data/www
 	git clone https://github.com/knowyourider/gizmo_project.git digitalgizmo.com.vm-host.net
+	git clone https://github.com/knowyourider/gizmo_project.git digitalgizmo.com
 
 Setup virtual environment and install Django
 ---------------------------------------------
@@ -57,6 +58,7 @@ Setup virtual environment and install Django
 Logged in as root
 ::
 	mkvirtualenv -a  /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo --python=/usr/local/bin/python3.4 gizmo
+	mkvirtualenv -a  /var/www/gizmo_user/data/www/digitalgizmo.com/gizmo --python=/usr/local/bin/python3.4 gizmoz
 
 
 Config Apache
@@ -83,3 +85,20 @@ in /etc/httpd/conf/http...
 	<Directory /var/www/gizmo_user/data/www/digitalgizmo.com.vm-host.net/gizmo>
 		Options +Includes -ExecCGI
 	</Directory>
+
+Diff for live:
+Additions to apache
+in /etc/httpd/conf/http...
+:: 
+	[ in virtual host]
+	Alias /static/ /var/www/gizmo_user/data/www/gizmo_static/
+	WSGIDaemonProcess production python-path=/var/www/gizmo_user/data/www/digitalgizmo.com/gizmo:/var/www/gizmo_user/data/.envs/gizmoz/lib/python3.4/site-packages
+	WSGIProcessGroup production
+	WSGIScriptAlias / /var/www/gizmo_user/data/www/digitalgizmo.com/gizmo/config/wsgi.py
+
+	[after virtual host]
+<Directory /var/www/gizmo_user/data/www/digitalgizmo.com/gizmo>
+	Options +Includes -ExecCGI
+</Directory>
+
+
