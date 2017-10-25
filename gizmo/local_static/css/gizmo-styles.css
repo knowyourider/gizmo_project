@@ -615,6 +615,9 @@ table.title-block {
 .stroke3 {
   stroke-width: 3px; }
 
+.stroke6 {
+  stroke-width: 6px; }
+
 .no-fill {
   fill: none; }
 
@@ -622,10 +625,13 @@ table.title-block {
   fill: #283C66; }
 
 .tone-fill {
-  fill: #213154; }
+  fill: #24365b; }
 
 .light-fill {
   fill: #d3dbe8; }
+
+.medium-fill {
+  fill: #41577b; }
 
 .miterlimit {
   stroke-miterlimit: 10; }
