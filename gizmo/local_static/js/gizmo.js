@@ -61,18 +61,19 @@ $(document).ready(function(){
 	// slim pops
   $(document).on("click", ".pop_item", function(event){
   // $(".pop_item").on("click touchstart", function(event){
-    console.log("--- got to pop_item");
     event.preventDefault();
     // get href
     // use closest -- target may be image in dig deeper gallery
     var chosen_href = $(event.target).closest('a').attr('href');
-
-    // var href_split = chosen_href.split('/');    
-    // // href_split[1] = project, about
-    // var slimpopSizeClass = href_split[1];
+    console.log(" -- href: " + chosen_href);
+    // e.g. /project/impressions
+    var href_split = chosen_href.split('/');    
+    // href_split[1] = project, about, [2] = impressions, juliet
+    var ajaxHref = "/" + href_split[1] + "/ajax/" + href_split[2];
+    console.log(" -- ajaxHref: " + ajaxHref);
 
 	// slimPop(chosen_href, slimpopSizeClass);  
-	slimPop(chosen_href, "project");  
+	slimPop(ajaxHref, "project");  
 
  //    // console.log(" -- slim class size: " + slimpopSizeClass);
 
