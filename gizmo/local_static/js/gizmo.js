@@ -72,26 +72,33 @@ $(document).ready(function(){
     var ajaxHref = "/" + href_split[1] + "/ajax/" + href_split[2];
     console.log(" -- ajaxHref: " + ajaxHref);
 
-	// slimPop(chosen_href, slimpopSizeClass);  
-	slimPop(ajaxHref, "project");  
+  	// slimPop(chosen_href, slimpopSizeClass);  
+  	slimPop(ajaxHref, "project");  
 
- //    // console.log(" -- slim class size: " + slimpopSizeClass);
+    //    // console.log(" -- slim class size: " + slimpopSizeClass);
 
-	// // conditions for full version of pop
- //    // for mobile special and supporting items  then insert "/full" into path
- //    // e.g. /special/footprint/find-footprints/
- //    //     0/   1   /   2     /     3         / 4
- //    if ($('#js-top-navigation-mobile-menu').is(":visible"))  {
- //      if (href_split[1] == "special" || href_split[1] == "supporting"){
- //        var fullHref = "/" + href_split[1] + "/full/" + href_split[2] + "/" + href_split[3] + "/";
- //        // e.g. /special/full/footprint/find-footprints/
- //        // console.log(" -- fullHref: " + fullHref);
- //        window.location.href = fullHref;        
- //      }
- //    } else {
- //      // call ajax for the slim pop. (href, size class)
- //      slimPop(chosen_href, slimpopSizeClass);  
- //    }
+    // conditions for full version of pop
+    // for mobile special and supporting items  then insert "/full" into path
+    // e.g. /special/footprint/find-footprints/
+    //     0/   1   /   2     /     3         / 4
+    // if ($('body footer ul li').is(":visble"))  {
+
+   //  console.log(" -- .projects-grid-item[1]: " + $('.projects-grid-item[1]').attr('id'));
+
+   //  if ($('.projects-grid-item[1]').is(":nth-child(2n)"))  {
+   //    console.log(" -- nth-child(2n) (aka mobile)");
+   // //      if (href_split[1] == "special" || href_split[1] == "supporting"){
+   // //        var fullHref = "/" + href_split[1] + "/full/" + href_split[2] 
+   // // + "/" + href_split[3] + "/";
+   // //        // e.g. /special/full/footprint/find-footprints/
+   // //        // console.log(" -- fullHref: " + fullHref);
+   // //        window.location.href = fullHref;        
+   // //      }
+   //   } else {
+   //    console.log(" -- nth-child not 2n(aka desktop) ");
+   // //      // call ajax for the slim pop. (href, size class)
+   // //      slimPop(chosen_href, slimpopSizeClass);  
+   //    }
 
   });
 
