@@ -67,38 +67,24 @@ $(document).ready(function(){
     var chosen_href = $(event.target).closest('a').attr('href');
     console.log(" -- href: " + chosen_href);
     // e.g. /project/impressions
-    var href_split = chosen_href.split('/');    
-    // href_split[1] = project, about, [2] = impressions, juliet
-    var ajaxHref = "/" + href_split[1] + "/ajax/" + href_split[2];
-    console.log(" -- ajaxHref: " + ajaxHref);
 
-  	// slimPop(chosen_href, slimpopSizeClass);  
-  	slimPop(ajaxHref, "project");  
+    // if ($('.projects-grid-item[1]').is(":nth-child(2n)"))  {
+    if ($('.mobile-logo').is(":visible"))  {
+      console.log(" -- visible (aka mobile)");
+      // use href as-is for full
+      window.location.href = chosen_href;        
+    } else {
+      console.log(" -- not visible (aka desktop) ");
 
-    //    // console.log(" -- slim class size: " + slimpopSizeClass);
+      // split href and add ajax
+      var href_split = chosen_href.split('/');    
+      // href_split[1] = project, about, [2] = impressions, juliet
+      var ajaxHref = "/" + href_split[1] + "/ajax/" + href_split[2];
+      console.log(" -- ajaxHref: " + ajaxHref);
 
-    // conditions for full version of pop
-    // for mobile special and supporting items  then insert "/full" into path
-    // e.g. /special/footprint/find-footprints/
-    //     0/   1   /   2     /     3         / 4
-    // if ($('body footer ul li').is(":visble"))  {
-
-   //  console.log(" -- .projects-grid-item[1]: " + $('.projects-grid-item[1]').attr('id'));
-
-   //  if ($('.projects-grid-item[1]').is(":nth-child(2n)"))  {
-   //    console.log(" -- nth-child(2n) (aka mobile)");
-   // //      if (href_split[1] == "special" || href_split[1] == "supporting"){
-   // //        var fullHref = "/" + href_split[1] + "/full/" + href_split[2] 
-   // // + "/" + href_split[3] + "/";
-   // //        // e.g. /special/full/footprint/find-footprints/
-   // //        // console.log(" -- fullHref: " + fullHref);
-   // //        window.location.href = fullHref;        
-   // //      }
-   //   } else {
-   //    console.log(" -- nth-child not 2n(aka desktop) ");
-   // //      // call ajax for the slim pop. (href, size class)
-   // //      slimPop(chosen_href, slimpopSizeClass);  
-   //    }
+      // slimPop(chosen_href, slimpopSizeClass);  
+      slimPop(ajaxHref, "project");  
+    }
 
   });
 
