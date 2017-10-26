@@ -39,13 +39,30 @@ footer, header nav {
 	}
 }
 
-footer ul li {
+footer ul {
 	// if screen is less than 600px
   @include media(max-width $medium-screen - 1px) {
-		border-right: none;
-		display: block;
-		padding: $tiny-spacing 0;
+  	float: left;
+	
+		li {
+			border-right: none;
+			display: block;
+			padding: $tiny-spacing 0;
+		}
 	}
+}
+
+// logo for mobile view
+img.mobile-logo {
+  border: none;
+  display: inline;
+  float: right;
+  padding-right: $base-spacing;
+  max-width: 25%;
+
+  @include media($medium-screen) {
+    display: none;
+  }
 }
 
 .left-column {

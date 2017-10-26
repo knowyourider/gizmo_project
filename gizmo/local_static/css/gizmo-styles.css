@@ -458,10 +458,22 @@ footer a, header nav a {
   margin-right: 0.8em; }
 
 @media screen and (max-width: 599px) {
-  footer ul li {
-    border-right: none;
-    display: block;
-    padding: 0.4em 0; } }
+  footer ul {
+    float: left; }
+    footer ul li {
+      border-right: none;
+      display: block;
+      padding: 0.4em 0; } }
+
+img.mobile-logo {
+  border: none;
+  display: inline;
+  float: right;
+  padding-right: 1.6em;
+  max-width: 25%; }
+  @media screen and (min-width: 600px) {
+    img.mobile-logo {
+      display: none; } }
 
 .left-column {
   float: left;
